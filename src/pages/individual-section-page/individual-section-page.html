@@ -1,0 +1,45 @@
+<!--
+  Generated template for the IndividualSectionPage page.
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content class="main-content">
+    <!--<ion-tabs>
+        <ion-tab *ngFor="let tab of sections"></ion-tab>
+    </ion-tabs>-->
+    <ion-card *ngFor="let service of services" (click)="serviceClick(category, service.html, service.price, service.title, service.img, service.id)">
+            <!--<ion-item color="cardbackground" text-wrap>
+                <ion-thumbnail item-left>
+                    <img [src]="service.img"/>
+                </ion-thumbnail>
+                <h1>{{service.title}}</h1>
+            </ion-item>-->
+        <div class="image_holder">
+            <img src="{{service.img}}" color="cardbackground" class="image_element"/>
+        </div>
+        <!--<ion-item color="cardbackground" [ngStyle]="{'height.px': 130}">
+        </ion-item>-->
+        <ion-row [ngStyle]="{'height.%': 22}">
+            <!--<ion-col [ngStyle]="{'max-width.em': 4.4}">
+                <button ion-button icon-only (click)="runActionSheet()" clear><ion-icon name="arrow-down" color="cobblestonegray"></ion-icon></button>
+            </ion-col>-->
+            <ion-col>
+                <ion-item class="title_element" text-wrap>{{service.title}}</ion-item>
+            </ion-col>
+            <ion-col class="down_icon" [ngStyle]="{'max-width.em': 4.0}">
+                <button ion-button full icon-only class="down_button" (click)="showDetails(service)"><ion-icon [name]="service.icon_name" color="blanche" clear></ion-icon></button>
+            </ion-col>
+        </ion-row>
+        <ion-row [hidden]="service.hidden">
+            <ion-col width-66><div [innerHtml]="service.html" class="details"></div></ion-col>
+            <ion-col width-33>
+                <div class="price-floating" item-right *ngIf="service.price > 0">${{service.price}}</div>
+                <div>
+                    <button ion-button outline icon-only item-right [color]="service.color" [ngStyle]="{float: 'right'}" (click)="changeBookmarkStatus(service)">
+                        <ion-icon clear name="heart" [color]="service.color" class="heart-icon"></ion-icon>
+                    </button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

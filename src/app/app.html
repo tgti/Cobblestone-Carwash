@@ -1,0 +1,23 @@
+<ion-menu [content]="content" (ionOpen)="onMenuOpen($event)" (ionClose)="onMenuClose($event)">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+      <button menuClose ion-item (click)="openAccountPage(account_page)" mode="md">
+          <ion-avatar><img src="assets/img/ic_account_circle_3x.png"/></ion-avatar>
+          <ion-item>{{account_page.title}}</ion-item>
+      </button>
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" [ngStyle]="{'border-bottom':useBorder(p.title)}"><!--<i class="material-icons" item-left color="primary">{{p.icon}}</i>-->
+          <ion-icon name="{{p.icon}}" item-left color="primary"></ion-icon>{{p.title}}<ion-badge item-right color="primary" *ngIf="p.badge != 'none'">{{p.badge}}</ion-badge>
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

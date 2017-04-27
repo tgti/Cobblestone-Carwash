@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cobblestone Auto Spa</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+     <!--<iframe class="iframe-style" id="JotFormIFrame-60616334305953" [src]="updateURL('https://form.jotform.com/60616334305953')"> </iframe>-->
+    
+    <ion-list>
+        <ion-card>
+            <ion-list>
+                <ion-item>
+                    <ion-label floating>Full Name</ion-label>
+                    <ion-input type="text" [(ngModel)]="contact_info[0]"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Phone Number</ion-label>
+                    <ion-input type="phone" [(ngModel)]="contact_info[1]"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label floating>Email</ion-label>
+                    <ion-input type="email" [(ngModel)]="contact_info[2]"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-select [selectOptions]="location_options" placeholder="Which location did you visit?" [(ngModel)]="selected_location">
+                        <ion-option *ngFor="let location of locations" (value)="location">{{location}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                RATE THE FOLLOWING ON A SCALE OF 1 (LOWEST RATING) TO 5 (HIGHEST RATING)
+            </ion-card-header>
+            <ion-list>
+                <ion-list-header>
+                    Friendly and courteous staff?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[0]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    Cleanliness of your car?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[1]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    Cleanliness of our facilities?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[2]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    Cleanliness of our vacuum facilities?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[3]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    Would you recommend us to family and friends?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[4]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+                <ion-list-header>
+                    Overall, how would you rate the services provided to you?
+                </ion-list-header>
+                <ion-item>
+                    <ion-range color="danger" min="1" max="5" step="1" snaps="true" pin="true" [(ngModel)]="ranges[5]">
+                        <ion-label range-left>1</ion-label>
+                        <ion-label range-right>5</ion-label>
+                    </ion-range>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-card-header>
+                COMMUNICATION
+            </ion-card-header>
+            <ion-list>
+                <ion-item>
+                    <ion-select [selectOptions]="customer_service_options" placeholder="Would you like for a Customer Service Representative to contact you?" [(ngModel)]="communication[0]">
+                        <ion-option>Yes</ion-option>
+                        <ion-option>No</ion-option>
+                    </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-select [selectOptions]="contact_options" placeholder='"If you answered "Yes" to the previous question, how would you like to be contacted?"' [(ngModel)]="communication[1]">
+                        <ion-option>Phone</ion-option>
+                        <ion-option>Email</ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-list>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label floating>Additional Comments</ion-label>
+                <ion-textarea type="text" [(ngModel)]="additional_comments"></ion-textarea>
+            </ion-item>
+        </ion-card>
+        <ion-card>
+            <ion-item>
+                <ion-label>Opt into our text message list!</ion-label>
+                <ion-checkbox color="primary" [(ngModel)]="opt_into_text"></ion-checkbox>
+            </ion-item>
+        </ion-card>
+    </ion-list>
+    <button ion-button color="primary" (click)='submitForm();'>Submit</button>
+</ion-content>

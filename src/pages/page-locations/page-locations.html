@@ -1,0 +1,57 @@
+<!--
+  Generated template for the PageLocations page.
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Locations</ion-title>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          
+      </ion-buttons>
+      
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="main-content">
+    <div #map id="map"></div>
+    <div #scrollcontent id="scrollcontent">
+        <ion-card *ngFor="let card of locations" (click)='cardClickEvent(card.lat, card.lon);'>
+            <!--We need, from left to right, a pin, the title & address, CALL, and GO-->
+            <ion-item>
+                <ion-icon item-left name="pin" color="primary">
+                </ion-icon>
+                <h2>{{card.name}}</h2>
+                <p>{{card.address}}</p>
+                <a button ion-button item-right clear style="height: 100%;" href="{{card.phone}}">
+                    <div class="blue-text">
+                    <ion-icon name="call" style="font-size: 40px;"></ion-icon>
+                    <p ion-text color="primary">CALL</p>
+                    </div>
+                </a>
+                <button ion-button item-right clear style="height: 100%;" (click)="goToAddress(card.address)">
+                    <div class="blue-text">
+                        <p ion-text color="primary">{{card.distance}} mi</p>
+                        <br>
+                        <p ion-text color="primary">GO</p>
+                    </div>
+                </button>
+            </ion-item>
+        </ion-card>
+    </div>
+</ion-content>

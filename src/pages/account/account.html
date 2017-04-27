@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cobblestone Auto Spa</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <!-- make header with account avatar, name, and log out button -->
+    
+    <!-- add account, notification settings, and support pages -->
+    
+    <!--PSEUDOCODE-->
+    <!--avatar, name and logout stacked class="gray-div"-->
+    <div class="gray-div">
+        <ion-item>
+            <ion-avatar item-left>
+                <img class="avatar-temp" src="assets/img/ic_account_circle_3x.png"/>
+            </ion-avatar>
+            <div>
+                <ion-item><ion-input type="text" value="{{name}}"></ion-input></ion-item>
+                <button ion-button class="logout-button" color="danger" (click)="logout()"><!--display: block, margin: auto-->
+                    Log Out
+                </button>
+            </div>
+        </ion-item>
+    </div>
+    <!--list with three sections-->
+    <div padding>
+        <ion-list no-lines>
+            <!--account settings, underneath profile settings & wallet settings...buttons-->
+            <ion-list-header>
+                Account Settings
+            </ion-list-header>
+            <button ion-item>
+                Profile Settings
+            </button>
+            <button ion-item>
+                Wallet Settings
+            </button>
+
+            <!--notification settings, children location, deals, expiring...toggles-->
+            <ion-list-header>
+                Notification Settings
+            </ion-list-header>
+            <ion-item>
+                <ion-label>Location Notifications</ion-label>
+                <ion-toggle checked="true" color="cobbletoggle" mode="md"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Deals Notifications</ion-label>
+                <ion-toggle checked="true" color="cobbletoggle" mode="md"></ion-toggle>
+            </ion-item>
+            <ion-item>
+                <ion-label>Expiring Notifications</ion-label>
+                <ion-toggle checked="true" color="cobbletoggle" mode="md"></ion-toggle>
+            </ion-item>
+
+            <!--support, app feedback, site feedback, contact us...buttons-->
+            <ion-list-header>
+                Support
+            </ion-list-header>
+            <button ion-item>
+                App Feedback
+            </button>
+            <button ion-item>
+                Site Feedback
+            </button>
+            <button ion-item>
+                Contact Us
+            </button>
+        </ion-list>
+    </div>
+</ion-content>

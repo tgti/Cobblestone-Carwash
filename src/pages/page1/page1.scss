@@ -1,0 +1,36 @@
+page-page1 {
+    .title_element {
+        overflow: visible;
+        color: $dark;
+        font-size: 1.0em;
+        //height: 25px;
+        height: 22%;
+        //line-height: 25px;
+        
+        //padding-left: 0px!important;
+        //background-color: $cardbackground;
+    }
+    .image_element {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .image_holder {
+        height: 78%;
+        margin: 0 auto;
+        position: relative;
+        overflow-y: hidden;
+    }
+    .main-content {
+        ion-card {
+            margin-top:15px;
+            width: 95%;
+            margin-left: 2.5%;
+            height: 41%;
+        }
+        .iframe-insta {
+            width: 100%;
+        }
+    }
+}

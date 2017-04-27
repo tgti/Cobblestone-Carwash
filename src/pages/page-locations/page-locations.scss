@@ -1,0 +1,24 @@
+page-page-locations {
+    #map {
+        width: 100%;
+        height: 70%;
+    }
+    #scrollcontent {
+        height: 30%;
+    }
+    .main-content {
+
+        ion-card {
+            margin-top:15px;
+            width: 95%;
+            margin-left: 2.5%;
+            min-height: auto!important;
+        }
+    }
+    /*ion-app._gmaps_cdv_ .nav-decor {
+        background-color: rgba(0,0,0,0);
+    }*/
+    .nav-decor {
+        display: none !important;
+    }
+}

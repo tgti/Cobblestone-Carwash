@@ -1,0 +1,64 @@
+page-bookmark {
+    .title_element {
+        overflow: visible;
+        color: $dark;
+        font-size: 0.9em;
+        height: 25px;
+        line-height: 25px;
+        //padding-left: 0px!important;
+    }
+    .down_icon {
+        background-color: $cobblestonered;
+    }
+    .down_button {
+        background: transparent;
+        box-shadow: none!important;
+    }
+    .main-content {
+        ion-card {
+            margin-top:15px!important;
+            width: 95%;
+            margin-left: 2.5%;
+        }
+    }
+    
+    .favorite-image {
+        margin: auto;
+        display: block;
+        margin-top: 30%;
+    }
+    .favorite-blurb {
+        margin-top: 15%;
+        line-height: 150%;
+    }
+    /*.image_element {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .image_holder {
+        height: 27.7vh;
+        margin: 0 auto;
+        position: relative;
+        overflow-y: hidden;
+    }*/
+    .price-floating {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: #000;
+        text-align:right;
+    }
+    .details {
+        white-space:normal;
+        word-wrap:normal;
+    }
+    .heart-icon {
+        font-size: 1.3em;
+    }
+    
+    
+    .center {
+        text-align: center;
+    }
+}

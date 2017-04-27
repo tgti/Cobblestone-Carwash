@@ -1,0 +1,35 @@
+page-account {
+    ion-list-header {
+        color: $cobblestoneblue!important;
+        font-size: 1.35em!important;
+        font-weight: bold!important;
+    }
+    ion-item {
+        font-size:0.9em!important;
+        background:transparent!important;
+    }
+    button {
+        font-size:0.9em!important;
+    }
+    ion-list-header {
+        border-bottom: 1px solid #dedede!important;
+        border-top: 0px!important;
+        padding-left: 0px!important;
+    }
+    .logout-button {
+        display: block;
+        margin: auto;
+    }
+    .gray-div {
+        background-color: #6F6F6F!important;
+    }
+    .item-inner {
+        border-bottom: 0px!important;
+    }
+    ion-input {
+        background-color: #B8B8B8!important;
+    }
+    .avatar-temp {
+        background-color: #fff;
+    }
+}

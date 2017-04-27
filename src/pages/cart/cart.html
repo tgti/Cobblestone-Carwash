@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cart</ion-title>
+      <ion-buttons start>
+          <button ion-button icon-only (click)="openSearch($event)">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          
+      </ion-buttons>
+      
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      
+      </ion-buttons>
+      
+      <ion-buttons right>
+          <button ion-button icon-only>
+            <ion-icon name="cart"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-card *ngFor="let product of products" color="cardbackground">
+            <ion-card-content>
+                <ion-row>
+                    <ion-col width-50>
+                        {{product.title}}
+                    </ion-col>
+                    <ion-col width-10>
+                        {{product.qty}}
+                    </ion-col>
+                    <ion-col>
+                        ${{product.price}}
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button icon-only outline (click)="deleteProduct(product.id)" small class="x_button"><ion-icon name="close"></ion-icon></button>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+</ion-content>

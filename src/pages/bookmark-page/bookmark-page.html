@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favorites</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let service of services">
+        <div class="image_holder">
+            <img src="{{service.img}}" class="image_element"/>
+        </div>
+        <!--<ion-item color="cardbackground" [ngStyle]="{'height.px': 130}">
+        </ion-item>-->
+        <ion-row>
+            <ion-col>
+                <ion-item class="title_element" text-wrap>{{service.title}}</ion-item>
+            </ion-col>
+            <ion-col class="down_icon center" [ngStyle]="{'max-width.em': 4.0}">
+                <button ion-button full icon-only class="down_button" (click)="showDetails(service)"><ion-icon [name]="service.icon_name" color="blanche" clear></ion-icon></button>
+            </ion-col>
+        </ion-row>
+        <ion-row [hidden]="service.hidden">
+            <ion-col width-66><div [innerHtml]="service.html" class="details"></div></ion-col>
+            <ion-col width-33>
+                <div class="price-floating" item-right *ngIf="service.price > 0">${{service.price}}</div>
+                <div>
+                    <button ion-button outline icon-only item-right [color]="service.color" [ngStyle]="{float: 'right'}" (click)="changeBookmarkStatus(service)">
+                        <ion-icon clear name="heart" [color]="service.color" class="heart-icon"></ion-icon>
+                    </button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+    <div *ngIf="show_blank">
+        <img src="assets/img/favorites-image.png" class="favorite-image"/>
+        <p ion-text class="center favorite-blurb">
+            No favorites yet?
+            <br>
+            Click the heart on any of our services
+            <br>
+            and you'll see them appear here.
+        </p>
+    </div>
+</ion-content>

@@ -1,0 +1,43 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cobblestone Auto Spa</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <img src="http://www.cobblestone.com/wp-content/themes/cobblestone/images/logo.png"/>
+    <p ion-text>
+        Welcome back!
+    </p>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button (click)="login_click(email, password)">
+        Login
+    </button>
+    <button ion-button (click)="create_account()">
+        Create an Account
+    </button>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Wallet</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only (click)="openLocations($event)">
+          <ion-icon name="pin"></ion-icon>
+          </button>
+      </ion-buttons>
+      <ion-buttons right>
+          <button ion-button icon-only (click)="openSearch()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="main-content">
+    <ion-row class="top-row">
+        <ion-col class="top-col">
+            <ion-icon name="icon-account-circle" [ngStyle]="{'font-size.em': 1.0}"></ion-icon>
+        </ion-col>
+        <ion-col class="top-col">
+            <button ion-button color="danger" class="redeem-button">Redeem Code</button>
+        </ion-col>
+    </ion-row>
+    <ion-card *ngFor="let product of products">
+        <ion-row>
+            <ion-col width-10 [ngStyle]="{'font-size.em': 2.0}">
+                <ion-icon name="pricetag" color="primary"></ion-icon>
+            </ion-col>
+            <ion-col width-66>
+                <p color="danger" [ngStyle]="{'font-size.em': 1.3}">{{product.name}}</p>
+                <p color="danger" class="expiration-italic" [innerHtml]="'Expires ' + convertDate(product.expiration)"></p>
+            </ion-col>
+            <ion-col class="width-24 action-col">
+                <button ion-button icon-only color="danger" class="action-button" (click)="promptUseWalletItem(product)">
+                    <!--<i class="material-icons" name="alert" color="blanche">new_releases</i>-->
+                    <ion-icon name="icon-burst" color="blanche"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

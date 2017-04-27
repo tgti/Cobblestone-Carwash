@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">Done</button>
+    </ion-buttons>
+
+    <ion-title>
+      Cobblestone Auto Spa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <p ion-text>
+        If you already have an awards account with us, please use the same email and license plate #
+    </p>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="pwd"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Confirm Password</ion-label>
+            <ion-input type="password" [(ngModel)]="pwd2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Phone</ion-label>
+            <ion-input type="phone" [(ngModel)]="phone"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>License Plate/Customer Code</ion-label>
+            <ion-input [(ngModel)]="cc"></ion-input>
+        </ion-item>
+    </ion-list>
+    <button ion-button (click)="create_account()">
+        Start Saving!
+    </button>
+</ion-content>

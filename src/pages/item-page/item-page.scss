@@ -1,0 +1,53 @@
+page-item-page {
+    /*.title_element {
+        overflow: visible;
+        color: $cobblestonegray;
+        font-size: 0.9em;
+        height: 25px;
+        line-height: 25px;
+    }
+    .cart_icon {
+        background-color: $cobblestonered;
+        text-align: center;
+    }
+    .cart_button {
+        background: transparent;
+        box-shadow: none!important;
+    }*/
+    .title_element {
+        overflow: visible;
+        color: $cobblestonegray;
+        font-size: 0.9em;
+        height: 25px;
+        line-height: 25px;
+        padding-left: 0px!important;
+    }
+    .down_icon {
+        background-color: $cobblestonered;
+        text-align: center;
+    }
+    .down_button {
+        background: transparent;
+        box-shadow: none!important;
+    }
+    .main-content {
+        ion-card {
+            margin-top:15px!important;
+            width: 95%;
+            margin-left: 2.5%;
+        }
+    }
+    .price-floating {
+        font-size: 1.7em;
+        font-weight: bold;
+        color: #000;
+        text-align:right;
+    }
+    .details {
+        white-space:normal;
+        word-wrap:normal;
+    }
+    .heart-icon {
+        font-size: 1.3em;
+    }
+}

@@ -1,0 +1,42 @@
+page-current-deals {
+
+    .main-content {
+        ion-card {
+            margin-top:15px;
+            width: 95%;
+            margin-left: 2.5%;
+            min-height: 0!important;
+        }
+    }
+    .width-24 {
+        max-width: 23%;
+        flex: 0 0 23%;
+    }
+    .action-col {
+        background-color: $cobblestonered;
+        text-align: center;
+    }
+    .action-button {
+        background: transparent;
+        box-shadow: none!important;
+    }
+    .expiration-italic {
+        font-size: 0.9em;
+        font-style: italic;
+    }
+    .redeem-button {
+        //position:relative;
+        //top:50%;
+        //transform: translateY(-50%);
+    }
+    .top-col {
+        display:table-cell;
+        width:50%;
+        vertical-align: middle;
+    }
+    .top-row {
+        display:table;
+        background-color:$cobblestonegray;
+    }
+    
+}
