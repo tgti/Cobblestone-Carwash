@@ -37,7 +37,7 @@
     "emulate": "1.0.2",
     "emulator": "0.1.0",
     "ionic-angular": "3.0.1",
-    "ionic2-custom-icons": "^0.4.1",
+    "ionic2-custom-icons": "^0.6.0",
     "ionicons": "3.0.0",
     "rxjs": "5.1.1",
     "sw-toolbox": "3.4.0",
